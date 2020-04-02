@@ -18,17 +18,19 @@ public class MemberDAOImp implements MemberDAO {
 
 	@Override
 	public int insert(MemberVO mvo) {
-		return 0;
+		int isOk = sql.insert(NS+"madd", mvo);
+		sql.commit();
+		return isOk;
 	}
 
 	@Override
 	public MemberVO selectOne(MemberVO mvo) {
-		return null;
+		return sql.selectOne(NS+"login", mvo);
 	}
 
 	@Override
 	public int selectOne(String email) {
-		return 0;
+		return sql.selectOne(NS+"idCheck", email);
 	}
 }
 
