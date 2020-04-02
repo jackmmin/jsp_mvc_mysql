@@ -50,4 +50,6 @@ pst에서 가져온 값을 rs에 저장해서 if와 while을 돌리는데 이 �
  
 SqlSession이 규격을 주고 sqlsessionFactory를 통해
 
+insert는 
+
 */
