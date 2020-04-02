@@ -7,12 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="resource/jquery-3.4.1.min.js"></script>
+<script src="resources/jquery-3.4.1.js"></script>
 </head>
 <body>
 	<h1>여기가 인덱스 페이지입니다.</h1>
-		<form action="./mCtrl" method="post">
-	<input type="hidden" name="sign" value="register">
+	<form action="./mCtrl" method="post">
+		<input type="hidden" name="sign" value="register">
 		<table border="1">
 			<tr>
 				<td colspan="2">
