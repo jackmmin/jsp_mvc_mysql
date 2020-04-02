@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+	<insert id="madd" parameterType="com.myweb.domain.MemberVO">
+		insert into tbl_member value(#{email}, #{nickname}, #{pwd}, 0)
+	</insert>
+	<select id="login" parameterType="com.myweb.domain.MemberVO" resultType="com.myweb.domain.MemberVO">
+		select * from tbl_member where email=#{email} and pwd=#{pwd}
+	</select>
+	<select id="idCheck" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select * count(email) from tbl_member where email=#{email}
+	</select>
+</mapper>
+<!--
+
+namespace는 이 mapper의 별명을 의미. 패키지 이름과는 무관하다.
+madd 란 이름을 호출하면 insert 태그를 호출하겠다.
+java에서 들어오는 변수를 읽을 때는 라인8 처럼 코딩한다. 끝에 세미콜론(;)은 자동으로 입력된다.
+
+-->

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="baseDir">C:/Users/Administrator/eclipse-workspace/logs/final_jsp_mvc2_mysql</Property><!-- 구분자 주의 \와 / -->
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS}[%t]%-5level %logger{36}-%msg%n" />
+		</Console>
+		<RollingFile name="RollingFile" fileName="${baseDir}/app.log"
+			filePattern="${baseDir}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.zip">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="250MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile"/>
+		</Root>
+	</Loggers>
+</Configuration>
+
+<!-- 
+
+데이터베이스에 영향을 끼치는 모든 작업들이 로그처리 된다.
+저장된 데이터들은 위에 작성된 코드의 형식대로 작성된다.  
+
+-->
