@@ -12,7 +12,7 @@ public class MemberDAOImp implements MemberDAO {
 	private static final String NS = "memberMapper.";
 	
 	public MemberDAOImp() {
-		new DBBuilder();
+		DBBuilder DBBuilder = new DBBuilder();
 		sql = DBBuilder.getFactory().openSession();
 	}
 
