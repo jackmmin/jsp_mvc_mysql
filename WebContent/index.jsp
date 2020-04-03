@@ -1,48 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="pg" value="${param.pg}" />
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-<script src="resources/bootstrap/js/jquery-3.4.1.js"></script>
-<script src="resources/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<div class="container">
-		<h1 class="mt-5">REGISTER</h1>
-		<form action="./mCtrl" method="post">
-			<input type="hidden" name="sign" value="register">
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="unick" value="${nickname}" scope="session"/>
+<c:set var="uemail" value="${email}" scope="session"/>
+<c:set var="ugrade" value="${grade}" scope="session"/>
 
-			<div class="form-group">
-				<label for="email">Email: </label> <input type="email"
-					name="i_email" id="i_email" class="form-control"> <br>
-				<span id="checkResult"></span>
-			</div>
-			<div class="form-group">
-				<label for="pwd">비밀번호: </label> <input type="password" name="i_pwd"
-					class="form-control">
-			</div>
-			<div class="form-group">
-				<label for="nick">닉네임: </label> <input type="text" name="i_nickname"
-					class="form-control">
-			</div>
+<jsp:include page="00_header.jsp"/>
+<jsp:include page="10_nav.jsp"/>
 
-			<button type="submit" class="btn btn-outline-primary">가입하기</button>
-			<button type="reset" class="btn btn-outline-secondary">초기화</button>
+<div class="jumbotron">
+    <h1>JM 쇼핑몰에 오신 것을 환영합니다.</h1>      
+  </div>
+  <p>별다른 기능이 없습니다.</p>      
+  <p>기능구현 후 수정될 예정입니다.</p>  
 
-		</form>
-	</div>
+<script>
+	$(function(){
+		let msg = '${param.pg}';
+		if (msg=='wc') {
+			alert("회원가입을 축하드립니다.");
+		}else if(msg=='ls'){
+			alert("로그인 되었습니다.");
+		}else if(msg=='bye'){
+			alert("로그아웃 되었습니다.")
+		}
+	});
+</script>
+<jsp:include page="90_footer.jsp"/>
 
-</body>
-</html>
+<!-- 
 
-<!--
-
-c:set은 MemberCtrl의 ("index.jsp?pg=wc"); 을 받아오기 위해 작성.
-input의 name="sign" 을 통해 java에서 접근하고 값은 value="register"를 갖는다.
-
--->
+jsp:include 내용들은 항상 있어야한다.
+c:.....에서 var는 날아온 value 값을 var의 변수값으로 여기에서 사용하겠다는 의미
+git commit -m "separate header, footer, navigation"
+ -->
