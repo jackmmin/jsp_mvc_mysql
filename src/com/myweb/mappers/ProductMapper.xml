@@ -5,8 +5,7 @@
 
 <mapper namespace="productMapper">
 	<insert id="padd" parameterType="com.myweb.domain.ProductVO">
-		insert into tbl_product(category, pname, content, pwriter, imgfile) 
-		values(#{category}, #{pname}, #{content}, #{pwriter}, #{imgfile})
+		insert into tbl_product(pname, category, pwriter, imgfile, content) values(#{pname}, #{category}, #{pwriter}, #{imgfile}, #{content})
 	</insert>
 	<select id="list" resultType="com.myweb.domain.ProductVO">
 		select pno, category, pname, pwriter, readcount, modd8, imgfile from tbl_product order by pno desc

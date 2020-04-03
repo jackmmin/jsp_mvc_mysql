@@ -4,11 +4,11 @@
 <c:set var="unick" value="${nickname}" scope="session" />
 <c:set var="uemail" value="${email}" scope="session" />
 <c:set var="ugrade" value="${grade}" scope="session" />
-<jsp:include page="../include/00_header.jsp" />
-<jsp:include page="../include/10_nav.jsp" />
+<jsp:include page="/include/00_header.jsp" />
+<jsp:include page="/include/10_nav.jsp" />
 
 <h2>상품 리스트</h2>
-<c:if test="${uemail != null && uemail != ''}"><a href="product/upload.jsp" class="btn btn-primary">상품등록</a></c:if>
+<c:if test="${uemail != null && uemail != ''}"><a href="upload.jsp" class="btn btn-primary">상품등록</a></c:if>
   <table class="table table-hover">
     <thead>
     
@@ -36,4 +36,4 @@
     </tbody>
   </table>
 
-<jsp:include page="../include/90_footer.jsp"/>
+<jsp:include page="/include/90_footer.jsp"/>

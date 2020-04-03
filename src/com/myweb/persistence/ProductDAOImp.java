@@ -19,7 +19,9 @@ public class ProductDAOImp implements ProductDAO {
 	
 	@Override
 	public int insert(ProductVO pvo) {
-		return sql.insert(NS+"padd", pvo);
+		int isOk = sql.insert(NS+"padd", pvo);
+		sql.commit();
+		return isOk;
 	}
 
 	@Override
@@ -34,11 +36,15 @@ public class ProductDAOImp implements ProductDAO {
 
 	@Override
 	public int update(ProductVO pvo) {
-		return sql.update(NS+"modify", pvo);
+		int isOk = sql.insert(NS+"modify", pvo);
+		sql.commit();
+		return isOk;
 	}
 
 	@Override
 	public int delete(int pno) {
-		return sql.delete(NS+"delete", pno);
+		int isOk = sql.insert(NS+"delete", pno);
+		sql.commit();
+		return isOk;
 	}
 }

@@ -50,12 +50,12 @@ public class ProductCtrl extends HttpServlet {
 			String pname = request.getParameter("i_pname");
 			String category = request.getParameter("i_category");
 			String pwriter = request.getParameter("i_pwriter");
-			String content = request.getParameter("i_content");
 			String imgfile = request.getParameter("i_imgfile");
+			String content = request.getParameter("i_content");
 			
 			/*ProductVO pvo = new ProductVO(category, pname, content, pwriter, imgfile);
 			psv.register(pvo);*/
-			int isOk = psv.register(new ProductVO(category, pname, content, pwriter, imgfile));
+			int isOk = psv.register(new ProductVO(pname, category, pwriter, imgfile, content));
 			
 			if(isOk > 0) {
 				log.info("상품등록 성공");
