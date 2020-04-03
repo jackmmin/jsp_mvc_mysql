@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center mb-5">
   <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+    <li class="nav-item"><a class="nav-link" href="./pCtrl?sign=list">Product</a></li>
     
     <c:choose>
     	<c:when test="${uemail != '' && uemail != null}">
