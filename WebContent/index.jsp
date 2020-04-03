@@ -32,5 +32,5 @@
 
 jsp:include 내용들은 항상 있어야한다.
 c:.....에서 var는 날아온 value 값을 var의 변수값으로 여기에서 사용하겠다는 의미
-git commit -m "separate header, footer, navigation"
+
  -->
