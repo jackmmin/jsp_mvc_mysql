@@ -9,13 +9,13 @@
 		values(#{category}, #{pname}, #{content}, #{pwriter}, #{imgfile})
 	</insert>
 	<select id="list" resultType="com.myweb.domain.ProductVO">
-		select pno, category, pname, pwriter, readcount, moddate, imgfile from tbl_product order by pno desc
+		select pno, category, pname, pwriter, readcount, modd8, imgfile from tbl_product order by pno desc
 	</select>
 	<select id="detail" parameterType="java.lang.Integer" resultType="com.myweb.domain.ProductVO">
 		select * from tbl_product where pno=#{pno}
 	</select>
 	<select id="modify" parameterType="com.myweb.domain.ProductVO">
-		update tbl_product set pname=#{pname}, category=#{category}, content=#{content}, imgfile=#{imgfile}, moddate=now() where pno=#{pno}
+		update tbl_product set pname=#{pname}, category=#{category}, content=#{content}, imgfile=#{imgfile}, modd8=now() where pno=#{pno}
 	</select>
 	<select id="delete" parameterType="java.lang.Integer">
 		delete from tbl_product where pno=#{pno}
