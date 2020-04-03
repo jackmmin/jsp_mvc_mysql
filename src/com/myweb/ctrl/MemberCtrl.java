@@ -1,6 +1,7 @@
 package com.myweb.ctrl;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -72,9 +73,28 @@ public class MemberCtrl extends HttpServlet {
 				log.info("로그인 실패");
 			}
 
-		} else if (sign.equals("idCheck")) {
-
+		} else if(sign.equals("idCheck")) {
+			String email = req.getParameter("email");
+			log.info("mCtrl>>> " + email);
+			int isExist = msv.idCheck(email);
+			
+			if(isExist > 0 ) {
+				log.info(">>> 회원가입 불가");
+			}else {
+				log.info(">>> 회원가입 가능");
+			}
+			
+			PrintWriter out = res.getWriter();
+			out.print(isExist); // ajax
+			
+		}else if(sign.equals("logout")) {
+			HttpSession session = req.getSession();
+			session.invalidate();
+			
+			RequestDispatcher rdp = req.getRequestDispatcher("index.jsp?pg=bye");
+			rdp.forward(req, res);
 		}
+
 
 	}
 

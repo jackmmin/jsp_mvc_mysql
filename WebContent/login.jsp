@@ -19,7 +19,7 @@
 		<input type="password" name="i_pwd" class="form-control">
 	</div>
 
-	<button type="submit" class="btn btn-outline-primary">가입하기</button>
+	<button type="submit" class="btn btn-outline-primary">로그인하기</button>
 	<button type="reset" class="btn btn-outline-secondary">초기화</button>
 	
 </form>
