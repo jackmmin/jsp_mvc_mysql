@@ -16,5 +16,6 @@
   </environments>
   <mappers>
     <mapper resource="com/myweb/mappers/MemberMapper.xml"/>
+    <mapper resource="com/myweb/mappers/ProductMapper.xml"/>
   </mappers>
 </configuration>
