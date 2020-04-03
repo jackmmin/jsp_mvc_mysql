@@ -5,8 +5,8 @@
 <c:set var="uemail" value="${email}" scope="session"/>
 <c:set var="ugrade" value="${grade}" scope="session"/>
 
-<jsp:include page="00_header.jsp"/>
-<jsp:include page="10_nav.jsp"/>
+<jsp:include page="/include/00_header.jsp"/>
+<jsp:include page="/include/10_nav.jsp"/>
 
 <div class="jumbotron">
     <h1>JM 쇼핑몰에 오신 것을 환영합니다.</h1>      
@@ -26,7 +26,7 @@
 		}
 	});
 </script>
-<jsp:include page="90_footer.jsp"/>
+<jsp:include page="/include/90_footer.jsp"/>
 
 <!-- 
 

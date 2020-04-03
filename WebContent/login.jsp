@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="00_header.jsp"/>
-<jsp:include page="10_nav.jsp"/>
+<jsp:include page="/include/00_header.jsp"/>
+<jsp:include page="/include/10_nav.jsp"/>
 
 <h1 class="mt-5">LOGIN</h1>
 <form action="./mCtrl" method="post">
@@ -24,7 +24,7 @@
 	
 </form>
 
-<jsp:include page="90_footer.jsp"/>
+<jsp:include page="/include/90_footer.jsp"/>
 
 <!-- 
 

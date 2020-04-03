@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="00_header.jsp"/>
-<jsp:include page="10_nav.jsp"/>
+<jsp:include page="/include/00_header.jsp"/>
+<jsp:include page="/include/10_nav.jsp"/>
 
 <h1 class="mt-5">REGISTER</h1>
 <form action="./mCtrl" method="post">
@@ -14,10 +14,12 @@
 		<input type="email" name="i_email" id="i_email" class="form-control">
 		<br><span id="checkResult"></span>
 	</div>
+	
 	<div class="form-group">
 		<label for="pwd">비밀번호: </label>
 		<input type="password" name="i_pwd" class="form-control">
 	</div>
+	
 	<div class="form-group">
 		<label for="nick">닉네임: </label>
 		<input type="text" name="i_nickname" class="form-control">
@@ -50,7 +52,7 @@
 	});
 </script>
 
-<jsp:include page="90_footer.jsp"/>
+<jsp:include page="/include/90_footer.jsp"/>
 
 <!-- 
 
