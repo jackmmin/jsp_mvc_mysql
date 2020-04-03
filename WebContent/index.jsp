@@ -1,53 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="pg" value="${param.pg}"/>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="pg" value="${param.pg}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="resources/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+<script src="resources/bootstrap/js/jquery-3.4.1.js"></script>
+<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>여기가 인덱스 페이지입니다.</h1>
-	<form action="./mCtrl" method="post">
-		<input type="hidden" name="sign" value="register">
-		<table border="1">
-			<tr>
-				<td colspan="2">
-					<h3>회원가입</h3>
-				</td>
-			</tr>
-			<tr><!-- 한 줄 -->
-				<td>email</td><!-- 한  칸 -->
-				<td><input type="email" name="i_email"></td>
-				<!-- name은 실제 전달되는 데이터를 식별한다. 같은 폼태그 안에서 절대 중복되면 안된다.-->
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" name="i_pwd"></td>
-			</tr>
-			<tr>
-				<td>닉네임</td>
-				<td><input type="text" name="i_nickname"></td>
-			</tr>
-			
-			<tr><td colspan="2">
-				<input type="submit" value="가입하기">
-				<input type="reset" value="초기화">
-			</td></tr>
-		</table>
-	</form>
-		<script>
-		$(function(){
-			let msg = '${param.pg}';
-			if (msg=='wc') {
-				alert("회원가입을 축하드립니다.");
-			}
-		});
-	</script>
-	
+	<div class="container">
+		<h1 class="mt-5">REGISTER</h1>
+		<form action="./mCtrl" method="post">
+			<input type="hidden" name="sign" value="register">
+
+			<div class="form-group">
+				<label for="email">Email: </label> <input type="email"
+					name="i_email" id="i_email" class="form-control"> <br>
+				<span id="checkResult"></span>
+			</div>
+			<div class="form-group">
+				<label for="pwd">비밀번호: </label> <input type="password" name="i_pwd"
+					class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="nick">닉네임: </label> <input type="text" name="i_nickname"
+					class="form-control">
+			</div>
+
+			<button type="submit" class="btn btn-outline-primary">가입하기</button>
+			<button type="reset" class="btn btn-outline-secondary">초기화</button>
+
+		</form>
+	</div>
+
 </body>
 </html>
 
