@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.myweb.domain.ProductVO;
+import com.myweb.persistence.ProductDAOImp;
 import com.myweb.service.ProductService;
 import com.myweb.service.ProductServiceImp;
 
@@ -34,6 +35,7 @@ public class ProductCtrl extends HttpServlet {
 		ProductService psv = new ProductServiceImp();
 		
 		String sign = request.getParameter("sign");
+		String pno = request.getParameter("pno");
 		
 		if(sign.equals("list")) {
 			List<ProductVO> pList = psv.getList();
@@ -49,6 +51,7 @@ public class ProductCtrl extends HttpServlet {
 		}else if(sign.equals("upload")) {
 			String pname = request.getParameter("i_pname");
 			String category = request.getParameter("i_category");
+//			log.info("에러잡자 !!!!! >>>category" + category);
 			String pwriter = request.getParameter("i_pwriter");
 			String imgfile = request.getParameter("i_imgfile");
 			String content = request.getParameter("i_content");
@@ -59,13 +62,23 @@ public class ProductCtrl extends HttpServlet {
 			
 			if(isOk > 0) {
 				log.info("상품등록 성공");
-				RequestDispatcher rdp = request.getRequestDispatcher("pCtrl?sign=list");
+//				log.info("에러잡자 !!!!! >>>category" + category);
+				RequestDispatcher rdp = request.getRequestDispatcher("./pCtrl?sign=list");
+//				log.info("에러잡자 !!!!! >>>category" + category);
 				rdp.forward(request, response);
 			}else {
 				log.info("상품등록 실패");
 			}
+		}else if(sign.equals("detail")) {
+			ProductVO pvo = psv.getDetail(Integer.parseInt(request.getParameter("pno")));
+			
+			if(pvo != null) {
+				request.setAttribute("pvo", pvo);
+			}
 		}
 	}
+	
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		service(request, response);

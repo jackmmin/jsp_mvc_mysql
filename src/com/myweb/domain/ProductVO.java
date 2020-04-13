@@ -17,7 +17,7 @@ public class ProductVO {
 	public ProductVO() {}
 	
 	
-	// 제품수정시 필요한 생성자
+	// 제품수정( update )시 필요한 생성자
 	public ProductVO(int pno, String category, String pname, String content, String imgfile) { // update
 		this.pno = pno;
 		this.category = category;
@@ -25,22 +25,19 @@ public class ProductVO {
 		this.content = content;
 		this.imgfile = imgfile;
 	}
-
-
-	// 제품등록시 필요한 생성자
-	public ProductVO(String category, String pname, String content, String pwriter, String imgfile) { // insert
-		this.category = category;
+	
+	// 제품등록( insert )시 필요한 생성자
+	public ProductVO(String pname, String category, String pwriter, String imgfile, String content) { // insert
 		this.pname = pname;
-		this.content = content;
+		this.category = category;
 		this.pwriter = pwriter;
 		this.imgfile = imgfile;
+		this.content = content;
 	}
-
 
 	public int getPno() {
 		return pno;
 	}
-
 
 	public void setPno(int pno) {
 		this.pno = pno;

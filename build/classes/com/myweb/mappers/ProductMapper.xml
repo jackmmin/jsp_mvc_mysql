@@ -8,7 +8,7 @@
 		insert into tbl_product(pname, category, pwriter, imgfile, content) values(#{pname}, #{category}, #{pwriter}, #{imgfile}, #{content})
 	</insert>
 	<select id="list" resultType="com.myweb.domain.ProductVO">
-		select pno, category, pname, pwriter, readcount, modd8, imgfile from tbl_product order by pno desc
+		select pno, pname, category, pwriter, readcount, modd8, imgfile from tbl_product order by pno desc
 	</select>
 	<select id="detail" parameterType="java.lang.Integer" resultType="com.myweb.domain.ProductVO">
 		select * from tbl_product where pno=#{pno}

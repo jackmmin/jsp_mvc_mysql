@@ -19,7 +19,7 @@ public class ProductServiceImp implements ProductService {
 	public int register(ProductVO pvo) {
 		return pdao.insert(pvo);
 	}
-
+	
 	@Override
 	public List<ProductVO> getList() {
 		return pdao.selectList();

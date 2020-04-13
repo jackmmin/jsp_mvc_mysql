@@ -7,8 +7,8 @@ create table tbl_member(
 
 create table tbl_product(
 	pno bigint(20) not null auto_increment,
-	category varchar(20) default null,
 	pname varchar(100) not null,
+	category varchar(20) default null,
 	content varchar(2000) default null,
 	pwriter varchar(200) not null,
 	readcount int(11) default 0,

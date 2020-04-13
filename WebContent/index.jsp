@@ -4,7 +4,6 @@
 <c:set var="unick" value="${nickname}" scope="session"/>
 <c:set var="uemail" value="${email}" scope="session"/>
 <c:set var="ugrade" value="${grade}" scope="session"/>
-
 <jsp:include page="/include/00_header.jsp"/>
 <jsp:include page="/include/10_nav.jsp"/>
 
